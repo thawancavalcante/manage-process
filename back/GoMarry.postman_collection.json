@@ -1,0 +1,482 @@
+{
+	"info": {
+		"_postman_id": "f1c4b9ac-0ad9-4dca-8f6a-2bcc01a12ab5",
+		"name": "GoMarry",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2202295"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjY4YmVkLWIxOGQtNDFlYS1hM2Q5LTljYTc4MDIzNzI5MyIsImVtYWlsIjoiamFvQGdtYWlsLmNvbSIsIm5hbWUiOiJqYWphbyIsImNyZWF0ZWRfYXQiOiIyMDIyLTExLTA0VDE3OjQxOjMzLjE4OVoiLCJyb2xlcyI6WyJBRE1JTiIsIlNPUlRJTkciXSwic3RhdHVzIjoiQUNUSVZFIiwiaWF0IjoxNjY3NTkzNjk1LCJleHAiOjE2Njc2ODAwOTV9.ej_wYjmdCVYDVtrGKIA9m_fY_gq5YgTlqWBxM16IwGg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Portgas D. Ace\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/99b70cbc-d416-47e2-991a-46c31494a1a3",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"99b70cbc-d416-47e2-991a-46c31494a1a3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjY4YmVkLWIxOGQtNDFlYS1hM2Q5LTljYTc4MDIzNzI5MyIsImVtYWlsIjoiamFvQGdtYWlsLmNvbSIsIm5hbWUiOiJqYWphbyIsImNyZWF0ZWRfYXQiOiIyMDIyLTExLTA0VDE3OjQxOjMzLjE4OVoiLCJyb2xlcyI6WyJBRE1JTiIsIlNPUlRJTkciXSwic3RhdHVzIjoiQUNUSVZFIiwiaWF0IjoxNjY3NTkzNjk1LCJleHAiOjE2Njc2ODAwOTV9.ej_wYjmdCVYDVtrGKIA9m_fY_gq5YgTlqWBxM16IwGg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"dluffy@monkey.com\",\r\n    \"name\": \"luffy\",\r\n    \"password\": \"*!L0v3Meat*\",\r\n    \"roles\": [\"ADMIN\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjY4YmVkLWIxOGQtNDFlYS1hM2Q5LTljYTc4MDIzNzI5MyIsImVtYWlsIjoiamFvQGdtYWlsLmNvbSIsIm5hbWUiOiJqYWphbyIsImNyZWF0ZWRfYXQiOiIyMDIyLTExLTA0VDE3OjQxOjMzLjE4OVoiLCJyb2xlcyI6WyJBRE1JTiIsIlNPUlRJTkciXSwic3RhdHVzIjoiQUNUSVZFIiwiaWF0IjoxNjY3NTkzNjk1LCJleHAiOjE2Njc2ODAwOTV9.ej_wYjmdCVYDVtrGKIA9m_fY_gq5YgTlqWBxM16IwGg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/67268bed-b18d-41ea-a3d9-9ca780237293",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"67268bed-b18d-41ea-a3d9-9ca780237293"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inactivate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjY4YmVkLWIxOGQtNDFlYS1hM2Q5LTljYTc4MDIzNzI5MyIsImVtYWlsIjoiamFvQGdtYWlsLmNvbSIsIm5hbWUiOiJqYWphbyIsImNyZWF0ZWRfYXQiOiIyMDIyLTExLTA0VDE3OjQxOjMzLjE4OVoiLCJyb2xlcyI6WyJBRE1JTiIsIlNPUlRJTkciXSwic3RhdHVzIjoiQUNUSVZFIiwiaWF0IjoxNjY3NTkzNjk1LCJleHAiOjE2Njc2ODAwOTV9.ej_wYjmdCVYDVtrGKIA9m_fY_gq5YgTlqWBxM16IwGg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/inactivate/0801d14e-3b2b-4880-8ef8-e9d864593c12",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"inactivate",
+								"0801d14e-3b2b-4880-8ef8-e9d864593c12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjY4YmVkLWIxOGQtNDFlYS1hM2Q5LTljYTc4MDIzNzI5MyIsImVtYWlsIjoiamFvQGdtYWlsLmNvbSIsIm5hbWUiOiJqYWphbyIsImNyZWF0ZWRfYXQiOiIyMDIyLTExLTA0VDE3OjQxOjMzLjE4OVoiLCJyb2xlcyI6WyJBRE1JTiIsIlNPUlRJTkciXSwic3RhdHVzIjoiQUNUSVZFIiwiaWF0IjoxNjY3NTkzNjk1LCJleHAiOjE2Njc2ODAwOTV9.ej_wYjmdCVYDVtrGKIA9m_fY_gq5YgTlqWBxM16IwGg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/activate/0801d14e-3b2b-4880-8ef8-e9d864593c12",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"activate",
+								"0801d14e-3b2b-4880-8ef8-e9d864593c12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjY4YmVkLWIxOGQtNDFlYS1hM2Q5LTljYTc4MDIzNzI5MyIsImVtYWlsIjoiamFvQGdtYWlsLmNvbSIsIm5hbWUiOiJqYWphbyIsImNyZWF0ZWRfYXQiOiIyMDIyLTExLTA0VDE3OjQxOjMzLjE4OVoiLCJyb2xlcyI6WyJBRE1JTiIsIlNPUlRJTkciXSwic3RhdHVzIjoiQUNUSVZFIiwiaWF0IjoxNjY3NTkzNjk1LCJleHAiOjE2Njc2ODAwOTV9.ej_wYjmdCVYDVtrGKIA9m_fY_gq5YgTlqWBxM16IwGg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/?page=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"dluffy@monkey.com\",\r\n    \"password\": \"*!L0v3Meat*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Process",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjY4YmVkLWIxOGQtNDFlYS1hM2Q5LTljYTc4MDIzNzI5MyIsImVtYWlsIjoiamFvQGdtYWlsLmNvbSIsIm5hbWUiOiJqYWphbyIsImNyZWF0ZWRfYXQiOiIyMDIyLTExLTA0VDE3OjQxOjMzLjE4OVoiLCJyb2xlcyI6WyJBRE1JTiIsIlNPUlRJTkciXSwic3RhdHVzIjoiQUNUSVZFIiwiaWF0IjoxNjY3NTkzNjk1LCJleHAiOjE2Njc2ODAwOTV9.ej_wYjmdCVYDVtrGKIA9m_fY_gq5YgTlqWBxM16IwGg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Primeiro processo\",\r\n    \"content_url\": \"luffy\",\r\n    \"adviserIds\": [\r\n        \"51bfef9b-9285-4e52-86b1-f6cad0f9eb33\",\r\n        \"87723561-bd72-4cd7-b814-a3e22c09acf6\",\r\n        \"0801d14e-3b2b-4880-8ef8-e9d864593c12\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/process/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"process",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjY4YmVkLWIxOGQtNDFlYS1hM2Q5LTljYTc4MDIzNzI5MyIsImVtYWlsIjoiamFvQGdtYWlsLmNvbSIsIm5hbWUiOiJqYWphbyIsImNyZWF0ZWRfYXQiOiIyMDIyLTExLTA0VDE3OjQxOjMzLjE4OVoiLCJyb2xlcyI6WyJBRE1JTiIsIlNPUlRJTkciXSwic3RhdHVzIjoiQUNUSVZFIiwiaWF0IjoxNjY3NTkzNjk1LCJleHAiOjE2Njc2ODAwOTV9.ej_wYjmdCVYDVtrGKIA9m_fY_gq5YgTlqWBxM16IwGg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/process/3ff72eba-dfc7-4263-9e0e-d879022673a2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"process",
+								"3ff72eba-dfc7-4263-9e0e-d879022673a2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjY4YmVkLWIxOGQtNDFlYS1hM2Q5LTljYTc4MDIzNzI5MyIsImVtYWlsIjoiamFvQGdtYWlsLmNvbSIsIm5hbWUiOiJqYWphbyIsImNyZWF0ZWRfYXQiOiIyMDIyLTExLTA0VDE3OjQxOjMzLjE4OVoiLCJyb2xlcyI6WyJBRE1JTiIsIlNPUlRJTkciXSwic3RhdHVzIjoiQUNUSVZFIiwiaWF0IjoxNjY3NTkzNjk1LCJleHAiOjE2Njc2ODAwOTV9.ej_wYjmdCVYDVtrGKIA9m_fY_gq5YgTlqWBxM16IwGg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/process/?page=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"process",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Advise",
+			"item": [
+				{
+					"name": "Create description",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjY4YmVkLWIxOGQtNDFlYS1hM2Q5LTljYTc4MDIzNzI5MyIsImVtYWlsIjoiamFvQGdtYWlsLmNvbSIsIm5hbWUiOiJqYWphbyIsImNyZWF0ZWRfYXQiOiIyMDIyLTExLTA0VDE3OjQxOjMzLjE4OVoiLCJyb2xlcyI6WyJBRE1JTiIsIlNPUlRJTkciLCJBRFZJU0VSIl0sInN0YXR1cyI6IkFDVElWRSIsImlhdCI6MTY2NzU5MzY5NSwiZXhwIjoxNjY3NjgwMDk1fQ.rEZnWp5JxqVujSC9hxk5ydgiLpnbBQB552IrQVIKFKU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Primeira descrição\",\r\n    \"process_id\": \"888b9f6b-2a97-4498-9b3f-8bc20c3aa6e3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/advise/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"advise",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List advisers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjY4YmVkLWIxOGQtNDFlYS1hM2Q5LTljYTc4MDIzNzI5MyIsImVtYWlsIjoiamFvQGdtYWlsLmNvbSIsIm5hbWUiOiJqYWphbyIsImNyZWF0ZWRfYXQiOiIyMDIyLTExLTA0VDE3OjQxOjMzLjE4OVoiLCJyb2xlcyI6WyJBRE1JTiIsIlNPUlRJTkciXSwic3RhdHVzIjoiQUNUSVZFIiwiaWF0IjoxNjY3NTkzNjk1LCJleHAiOjE2Njc2ODAwOTV9.ej_wYjmdCVYDVtrGKIA9m_fY_gq5YgTlqWBxM16IwGg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/advise/advisers?page=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"advise",
+								"advisers"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List pending process",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjY4YmVkLWIxOGQtNDFlYS1hM2Q5LTljYTc4MDIzNzI5MyIsImVtYWlsIjoiamFvQGdtYWlsLmNvbSIsIm5hbWUiOiJqYWphbyIsImNyZWF0ZWRfYXQiOiIyMDIyLTExLTA0VDE3OjQxOjMzLjE4OVoiLCJyb2xlcyI6WyJBRE1JTiIsIlNPUlRJTkciLCJBRFZJU0VSIl0sInN0YXR1cyI6IkFDVElWRSIsImlhdCI6MTY2NzU5MzY5NSwiZXhwIjoxNjY3NjgwMDk1fQ.rEZnWp5JxqVujSC9hxk5ydgiLpnbBQB552IrQVIKFKU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/advise/pending-process?page=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"advise",
+								"pending-process"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

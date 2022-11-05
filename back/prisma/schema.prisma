@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  ADMIN
+  //Responsável por triagem
+  SORTING
+  //Responsável pelo parecer
+  ADVISER
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+}
+
+model user {
+  id            String     @id @default(uuid())
+  email         String     @unique
+  name          String
+  password_hash String
+  status        UserStatus @default(ACTIVE)
+  roles         UserRole[]
+  created_at    DateTime   @default(now()) @db.Timestamptz(3)
+  advise        advise[]
+  process       process[]
+}
+
+model process {
+  id            String   @id @default(uuid())
+  title         String
+  content_url   String
+  created_by    user     @relation(fields: [created_by_id], references: [id])
+  created_by_id String
+  created_at    DateTime @default(now()) @db.Timestamptz(3)
+  advise        advise[]
+}
+
+model advise {
+  id          String    @id @default(uuid())
+  description String?
+  adviser     user      @relation(fields: [adviser_id], references: [id])
+  adviser_id  String
+  process     process   @relation(fields: [process_id], references: [id])
+  process_id  String
+  created_at  DateTime  @default(now()) @db.Timestamptz(3)
+  updated_at  DateTime? @db.Timestamptz(3)
+}
