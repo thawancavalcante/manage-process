@@ -1,12 +1,5 @@
 ## 🚀 Como executar
 
-Após clonar o projeto, acesse a pasta do mesmo.
-
-```bash
-$ git clone https://github.com/thawancavalcante/manage-process-back.git
-$ cd manage-process-back
-```
-
 Crie um arquivo .env seguindo o exemplo do .env.example.
 
 Para iniciá-lo, siga os passos abaixo:
