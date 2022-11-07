@@ -33,7 +33,7 @@ export class ProcessService implements IProcessService {
     }
 
     async list(page: number): Promise<PaginatedResult<Process>> {
-        const Limit = 10
+        const Limit = 5
         try {
             return await this.repository.list(page, Limit)
         } catch (err) {

@@ -1,25 +1,42 @@
-## Description
+## 🚀 Como executar
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
+Após clonar o projeto, acesse a pasta do mesmo.
 
 ```bash
-$ npm install
+$ git clone https://github.com/thawancavalcante/manage-process-back.git
+$ cd manage-process-back
 ```
 
-## Running the app
+Crie um arquivo .env seguindo o exemplo do .env.example.
+
+Para iniciá-lo, siga os passos abaixo:
 
 ```bash
-# migrate
-$ npx prisma migrate dev --name init
+# Instalar as dependências
+$ yarn
 
-# development
-$ npm run start
+# Fazer migrate das tabelas utilizando o prisma
+npx prisma migrate dev
 
-# watch mode
-$ npm run start:dev
+# Fazer o seed dos primeiros usuarios
+npx prisma db seed
 
-# production mode
-$ npm run start:prod
+# Iniciar o projeto
+$ yarn start:dev
 ```
+
+Após executar o comando de seed vai ser gerado dois usuarios para login:
+
+```bash
+# Usuario com todas as permissões
+Email: super@gomerry.com
+Senha: admin
+
+# Admin
+Email: admin@gomerry.com
+Senha: admin
+
+```
+
+## Postman
+Todos endpoints estão disponiveis no postman, para usa-lo você deve importar o arquivo GoMarry.postman_collection.json como uma collection dentro do seu postman.

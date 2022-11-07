@@ -73,7 +73,7 @@ export class UserService implements IUserService {
     }
 
     async list(page: number): Promise<PaginatedResult<User>> {
-        const Limit = 10
+        const Limit = 5
         try {
             return await this.repository.list(page, Limit)
         } catch (err) {

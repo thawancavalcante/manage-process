@@ -12,21 +12,17 @@ import UserStatus from 'src/shared/enum/UserStatus.enum'
 export class AdviseRepository implements IAdviseRepository {
     constructor(private prisma: PrismaService) { }
 
-    async listAdvisers(page: number, limit: number): Promise<PaginatedResult<Adviser>> {
+    async findAdvisers(name: string, limit: number): Promise<Adviser[]> {
         try {
-            const result = await createPaginator({ perPage: limit, page })<Adviser, Prisma.userFindManyArgs>(
-                this.prisma.user,
-                {
-                    select: {
-                        id: true,
-                        name: true,
-                    },
-                    where: {
-                        status: UserStatus.ACTIVE,
-                        roles: { has: UserRole.ADVISER }
-                    }
-                },
-            )
+
+            const result = await this.prisma.$queryRaw <Adviser[]>`
+            SELECT id, name, email FROM "user"
+            WHERE name ILIKE ${`%${name}%`} AND
+            status = 'ACTIVE' AND
+            'ADVISER' = ANY(roles)
+            ORDER BY name DESC
+            LIMIT ${limit};
+        `;
 
             return result
         } catch (err) {
@@ -36,7 +32,6 @@ export class AdviseRepository implements IAdviseRepository {
 
     async listPendingProcess(adviserId: string, page: number, limit: number): Promise<PaginatedResult<Process>> {
         try {
-            console.log(adviserId)
             const result = await createPaginator({ perPage: limit, page })<Process, Prisma.processFindManyArgs>(
                 this.prisma.process,
                 {
@@ -59,6 +54,11 @@ export class AdviseRepository implements IAdviseRepository {
                                 updated_at: true,
                             }
                         },
+                        created_by: {
+                            select: {
+                                name: true
+                            }
+                        }
                     },
                 },
             )
@@ -72,7 +72,7 @@ export class AdviseRepository implements IAdviseRepository {
     async getAdviseByProcessIdAndAdviserId(adviserId: string, processId: string): Promise<Advise> {
         try {
             return this.prisma.advise.findFirst({
-                where: { adviser_id: adviserId, process_id: processId, description: '' },
+                where: { adviser_id: adviserId, process_id: processId, description: null },
             })
         } catch (err) {
             throw handleDatabaseErrors(err)

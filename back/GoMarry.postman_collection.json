@@ -223,13 +223,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}/auth/",
+							"raw": "{{URL}}/auth",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"auth",
-								""
+								"auth"
 							]
 						}
 					},
@@ -382,7 +381,7 @@
 					"response": []
 				},
 				{
-					"name": "List advisers",
+					"name": "Find advisers",
 					"request": {
 						"auth": {
 							"type": "bearer",

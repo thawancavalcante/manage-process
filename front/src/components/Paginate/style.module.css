@@ -1,0 +1,45 @@
+.flexContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flexContainer > div {
+  padding-top: 10px;
+}
+
+.paginateCtn {
+  display: flex;
+}
+
+.roundEffect {
+  color: #6a9294;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
+  margin: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  text-decoration: none;
+}
+
+.roundEffect:hover {
+  text-decoration: none;
+  background: #6a9294;
+  color: #fff;
+}
+
+.roundEffect:hover a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.active {
+  background: #6a9294;
+  color: #fff;
+}

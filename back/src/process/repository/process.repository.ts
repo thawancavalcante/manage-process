@@ -77,8 +77,6 @@ export class ProcessRepository implements IProcessRepository {
                 },
             })
 
-            console.log(result)
-
             return result
         } catch (err) {
             throw handleDatabaseErrors(err)
@@ -99,6 +97,11 @@ export class ProcessRepository implements IProcessRepository {
                         advise: {
                             select: {
                                 description: true,
+                            }
+                        },
+                        created_by: {
+                            select: {
+                                name: true
                             }
                         }
                     },

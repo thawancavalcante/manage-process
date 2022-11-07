@@ -94,6 +94,11 @@ export class UserRepository implements IUserRepository {
                         created_at: true,
                         roles: true,
                         status: true,
+                        advise: {
+                            select: {
+                                description: true
+                            }
+                        }
                     },
                 },
             )

@@ -14,22 +14,23 @@ export class AdviseController {
 
     @Get('advisers')
     @UseGuards(new AuthGuard([UserRole.SORTING]))
-    async listAdvisers(@Query() page: number): Promise<object> {
-        const advisers = await this.service.listAdvisers(page)
+    async findAdvisers(@Query('name') name: string): Promise<object> {
+        const advisers = await this.service.findAdvisers(name)
         return { advisers }
     }
 
     @Get('pending-process')
     @UseGuards(new AuthGuard([UserRole.ADVISER]))
-    async listPendingProcess(@Query() page: number, @User('id') userId: string): Promise<object> {
+    async listPendingProcess(@Query('page') page: number, @User('id') userId: string): Promise<object> {
         const process = await this.service.listPendingProcess(userId, page)
-        return { process }
+        return process
     }
 
     @Put('')
     @UseGuards(new AuthGuard([UserRole.ADVISER]))
     @Validate(UpdateSchema, { abortEarly: false })
     async update(@Body() advise: Advise, @User('id') userId: string): Promise<object> {
+        console.log(userId, advise.process_id)
         const success = await this.service.update(userId, advise.process_id, advise.description)
         return { success }
     }
